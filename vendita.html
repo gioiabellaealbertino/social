@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Meta tag essenziali per la codifica e la visualizzazione responsive su mobile -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendita - Gioiabella e Albertino (vendita.html)</title>
+
+    <!-- Caricamento di Tailwind CSS per uno stile moderno, pulito e responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Caricamento del font Inter da Google Fonts per una leggibilità ottimale -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 antialiased selection:bg-indigo-100 selection:text-indigo-700">
+
+    <!-- Contenitore principale ottimizzato per mobile (max-width 480px centrato, a tutta larghezza su schermi piccoli) -->
+    <main class="w-full max-w-[480px] mx-auto">
+
+        <!-- Banner illustrato in cima con spazio ridotto (mb-3) e fallback SVG integrato -->
+        <div class="mb-3 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-sky-300">
+            <img src="Barra del titolo.jpg" alt="Gioiabella e Albertino in campagna" class="w-full h-auto block object-cover" onerror="this.style.display='none'; var fb = document.getElementById('banner-fallback'); if (fb) fb.style.display='block';">
+            <svg id="banner-fallback" style="display:none;" class="w-full h-auto block" viewBox="0 0 800 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrazione di Gioiabella la volpe e Albertino il maialino in campagna">
+                <!-- Cielo azzurro -->
+                <rect width="800" height="430" fill="#5BBCE8"/>
+                <!-- Nuvole -->
+                <g fill="#FFFFFF">
+                    <circle cx="80" cy="65" r="22"/><circle cx="105" cy="58" r="28"/><circle cx="132" cy="65" r="22"/><rect x="78" y="65" width="56" height="22" rx="11"/>
+                    <circle cx="310" cy="70" r="18"/><circle cx="332" cy="63" r="23"/><circle cx="354" cy="70" r="18"/><rect x="308" y="70" width="48" height="18" rx="9"/>
+                    <circle cx="530" cy="60" r="20"/><circle cx="554" cy="52" r="25"/><circle cx="578" cy="60" r="20"/><rect x="528" y="60" width="52" height="20" rx="10"/>
+                </g>
+                <!-- Sole sorridente -->
+                <g transform="translate(715, 92)">
+                    <g stroke="#FFD600" stroke-width="6" stroke-linecap="round">
+                        <line x1="0" y1="-58" x2="0" y2="-45"/><line x1="0" y1="45" x2="0" y2="58"/>
+                        <line x1="-58" y1="0" x2="-45" y2="0"/><line x1="45" y1="0" x2="58" y2="0"/>
+                        <line x1="-41" y1="-41" x2="-32" y2="-32"/><line x1="32" y1="32" x2="41" y2="41"/>
+                        <line x1="-41" y1="41" x2="-32" y2="32"/><line x1="32" y1="-32" x2="41" y2="-41"/>
+                    </g>
+                    <circle r="38" fill="#FFD600" stroke="#E5A900" stroke-width="3"/>
+                    <ellipse cx="-11" cy="-8" rx="6" ry="9" fill="#FFFFFF"/><circle cx="-11" cy="-6" r="4" fill="#3E2723"/>
+                    <ellipse cx="11" cy="-8" rx="6" ry="9" fill="#FFFFFF"/><circle cx="11" cy="-6" r="4" fill="#3E2723"/>
+                    <path d="M-12 10 Q0 24 12 10" fill="none" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <!-- Colline verdi sullo sfondo -->
+                <path d="M0 190 Q120 140 240 190 T480 185 T800 180 L800 430 L0 430 Z" fill="#559E38"/>
+                <path d="M0 215 Q180 165 360 215 T800 200 L800 430 L0 430 Z" fill="#6BB545"/>
+                <!-- Casale e cipressi a sinistra -->
+                <g transform="translate(50, 120)">
+                    <ellipse cx="28" cy="48" rx="12" ry="48" fill="#3D7A28"/>
+                    <ellipse cx="56" cy="56" rx="10" ry="40" fill="#468A2F"/>
+                    <rect x="75" y="42" width="75" height="45" fill="#F3D99B" stroke="#6D4C2F" stroke-width="2"/>
+                    <polygon points="70,42 112,24 155,42" fill="#D97236" stroke="#6D4C2F" stroke-width="2"/>
+                    <rect x="115" y="64" width="14" height="23" fill="#6D4C2F"/>
+                    <rect x="86" y="55" width="10" height="12" fill="#6D4C2F"/>
+                </g>
+                <!-- Prato in primo piano -->
+                <rect x="0" y="255" width="800" height="175" fill="#7BC143"/>
+                <!-- Staccionata in legno -->
+                <g fill="#A67438" stroke="#5A3A18" stroke-width="2.5">
+                    <rect x="0" y="268" width="800" height="14"/>
+                    <rect x="0" y="302" width="800" height="14"/>
+                    <rect x="65" y="242" width="22" height="95" rx="3"/>
+                    <rect x="710" y="242" width="22" height="95" rx="3"/>
+                </g>
+                <!-- Fiori bianchi e rosa sul prato -->
+                <g transform="translate(135, 345)">
+                    <line x1="0" y1="0" x2="0" y2="28" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(85, 375)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5.5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5.5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5.5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5.5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5.5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(650, 355)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5.5" fill="#FF80AB"/><circle cx="7" cy="-4" r="5.5" fill="#FF80AB"/>
+                    <circle cx="-5" cy="6" r="5.5" fill="#FF80AB"/><circle cx="5" cy="6" r="5.5" fill="#FF80AB"/>
+                    <circle cx="0" cy="-9" r="5.5" fill="#FF80AB"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(715, 380)">
+                    <line x1="0" y1="0" x2="0" y2="28" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <!-- Gioiabella (Volpe) -->
+                <g transform="translate(275, 265)">
+                    <ellipse cx="0" cy="115" rx="55" ry="12" fill="#5D9931"/>
+                    <!-- Coda folta -->
+                    <path d="M35 55 Q115 25 90 -55 Q50 -20 35 30 Z" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <path d="M90 -55 Q72 -32 62 -15 L74 -8 L84 -18 L94 -10 Q100 -32 90 -55 Z" fill="#FFFFFF"/>
+                    <!-- Zampe e corpo -->
+                    <path d="M-28 70 L-45 105 L-22 115 L-8 82 Z" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <ellipse cx="-36" cy="110" rx="16" ry="10" transform="rotate(25 -36 110)" fill="#5C3A21" stroke="#4A1F08" stroke-width="3"/>
+                    <path d="M22 70 L45 102 L24 114 L5 82 Z" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <ellipse cx="38" cy="106" rx="16" ry="10" transform="rotate(-25 38 106)" fill="#5C3A21" stroke="#4A1F08" stroke-width="3"/>
+                    <ellipse cx="-4" cy="35" rx="44" ry="52" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <ellipse cx="-2" cy="35" rx="28" ry="42" fill="#FFFFFF"/>
+                    <!-- Braccia alzate -->
+                    <path d="M-40 15 L-82 -15 L-72 -28 L-34 -2 Z" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <path d="M34 15 L72 -20 L82 -8 L40 28 Z" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <!-- Testa ed orecchie -->
+                    <polygon points="-45,-45 -56,-102 -12,-68" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <polygon points="-42,-52 -49,-88 -20,-66" fill="#F4A482"/>
+                    <polygon points="35,-45 48,-108 5,-70" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <polygon points="32,-52 41,-92 12,-68" fill="#F4A482"/>
+                    <ellipse cx="-6" cy="-42" rx="44" ry="36" fill="#E8611A" stroke="#4A1F08" stroke-width="3"/>
+                    <path d="M-50 -36 Q-25 -22 -6 -38 Q15 -22 40 -36 Q32 -12 -6 -10 Q-42 -12 -50 -36 Z" fill="#FFFFFF" stroke="#4A1F08" stroke-width="2.5"/>
+                    <ellipse cx="-6" cy="-36" rx="7" ry="5" fill="#2B1810"/>
+                    <circle cx="-22" cy="-52" r="6" fill="#FFFFFF"/><circle cx="-21" cy="-51" r="4" fill="#2B1810"/>
+                    <circle cx="10" cy="-52" r="6" fill="#FFFFFF"/><circle cx="9" cy="-51" r="4" fill="#2B1810"/>
+                    <path d="M-16 -26 Q-6 -14 4 -26 Z" fill="#D94343" stroke="#4A1F08" stroke-width="2"/>
+                </g>
+                <!-- Albertino (Maialino) -->
+                <g transform="translate(520, 260)">
+                    <ellipse cx="0" cy="122" rx="68" ry="14" fill="#5D9931"/>
+                    <!-- Gambe e zoccoli -->
+                    <path d="M-45 75 L-62 115 L-34 122 L-22 85 Z" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <ellipse cx="-52" cy="118" rx="18" ry="11" transform="rotate(20 -52 118)" fill="#383434" stroke="#4A1F24" stroke-width="3"/>
+                    <path d="M18 82 L24 125 L54 122 L44 80 Z" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <ellipse cx="42" cy="124" rx="20" ry="12" transform="rotate(-12 42 124)" fill="#383434" stroke="#4A1F24" stroke-width="3"/>
+                    <!-- Corpo e pancino -->
+                    <ellipse cx="-6" cy="34" rx="58" ry="64" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <ellipse cx="-6" cy="36" rx="34" ry="44" fill="#EC7883" stroke="#4A1F24" stroke-width="2"/>
+                    <!-- Braccia alzate -->
+                    <path d="M-54 10 L-96 -55 L-76 -66 L-38 -12 Z" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <path d="M44 10 L102 -20 L110 -2 L50 32 Z" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <!-- Testa, ciuffo e orecchie -->
+                    <path d="M-6 -105 L-2 -128 L6 -110 L14 -130 L18 -108 L28 -120 L22 -100 Z" fill="#383434"/>
+                    <polygon points="-32,-88 -42,-132 -8,-102" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <polygon points="-28,-92 -35,-120 -14,-102" fill="#F27D88"/>
+                    <polygon points="34,-86 68,-122 50,-76" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <polygon points="36,-86 58,-110 46,-80" fill="#F27D88"/>
+                    <ellipse cx="6" cy="-64" rx="44" ry="42" fill="#FBB4B9" stroke="#4A1F24" stroke-width="3"/>
+                    <ellipse cx="6" cy="-64" rx="14" ry="9" fill="#F27D88" stroke="#4A1F24" stroke-width="2.5"/>
+                    <circle cx="1" cy="-64" r="2.5" fill="#4A1F24"/><circle cx="11" cy="-64" r="2.5" fill="#4A1F24"/>
+                    <circle cx="-4" cy="-84" r="7" fill="#FFFFFF"/><circle cx="-4" cy="-82" r="4.5" fill="#2B1810"/>
+                    <circle cx="18" cy="-82" r="7" fill="#FFFFFF"/><circle cx="18" cy="-80" r="4.5" fill="#2B1810"/>
+                    <path d="M-10 -50 Q6 -32 22 -48 Z" fill="#C93B3B" stroke="#4A1F24" stroke-width="2.5"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Intestazione della pagina dedicata a vendita.html -->
+        <header class="mb-3 px-1">
+            <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                Dove acquistare il libro
+            </h1>
+            <p class="text-sm text-slate-500 mt-0.5">
+                Il libro è disponibile nei migliori store fisici ed on line. 
+            </p>
+        </header>
+
+        <!-- Tabella HTML semantica: 1 colonna e 4 righe vuote con spaziatura verticale ridotta -->
+        <table class="w-full bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden border-collapse text-left">
+
+            <!-- Intestazione nascosta visivamente ma utile per gli screen reader (accessibilità) -->
+            <thead class="sr-only">
+                <tr>
+                    <th scope="col">Sezione vendita</th>
+                </tr>
+            <!-- Corpo della tabella con 4 righe e divisori sottili -->
+            <tbody class="divide-y divide-slate-200">
+                <!-- Riga 1 con icona di negozio fisico e testo per l'acquisto in libreria -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4 min-h-[3.25rem]">
+                        <div class="flex items-center gap-3">
+                            <!-- Icona Negozio fisico (40x40px) con facciata, tenda a righe, vetrina e porta -->
+                            <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Negozio fisico">
+                                <circle cx="12" cy="12" r="12" fill="#2563EB"/>
+                                <!-- Facciata del negozio -->
+                                <rect x="6.5" y="10.5" width="11" height="7" rx="1" fill="#FFFFFF"/>
+                                <!-- Tenda superiore a righe -->
+                                <path d="M5.75 7.5C5.75 6.95 6.2 6.5 6.75 6.5H17.25C17.8 6.5 18.25 6.95 18.25 7.5L19 10.2C19.1 10.6 18.8 11 18.38 11H5.62C5.2 11 4.9 10.6 5 10.2L5.75 7.5Z" fill="#FDE047"/>
+                                <path d="M8.5 6.5L8 11M11 6.5V11M13 6.5V11M15.5 6.5L16 11" stroke="#2563EB" stroke-width="1.35" stroke-linecap="round"/>
+                                <!-- Vetrina e porta -->
+                                <rect x="8.2" y="12.5" width="4" height="3.2" rx="0.5" fill="#2563EB"/>
+                                <rect x="13.3" y="12.5" width="2.6" height="5" rx="0.5" fill="#2563EB"/>
+                            </svg>
+                            <p class="flex-1 text-sm text-slate-700 leading-snug">
+                                Il libro Gioiabella e Albertino può essere acquistato/ordinato in qualsiasi libreria comunicando il codice ISBN 9791282288644
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Riga 2 con icona e-commerce e testo per gli store online -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4 min-h-[3.25rem]">
+                        <div class="flex items-center gap-3">
+                            <!-- Icona E-commerce (40x40px) su sfondo verde ottanio (#0D9488) con carrello e dettaglio acquisto -->
+                            <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="E-commerce e store online">
+                                <circle cx="12" cy="12" r="12" fill="#0D9488"/>
+                                <!-- Carrello / Shopping bag e-commerce -->
+                                <path d="M5.5 7H7.25C7.62 7 7.95 7.25 8.03 7.62L8.4 9.2M8.4 9.2H18.1C18.62 9.2 18.99 9.7 18.84 10.2L17.65 14.1C17.54 14.46 17.21 14.7 16.84 14.7H9.85C9.47 14.7 9.14 14.45 9.05 14.08L8.4 9.2Z" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Dettaglio pacco/prodotto dentro il carrello -->
+                                <rect x="11.3" y="6.2" width="3.4" height="2.2" rx="0.5" fill="#FDE047"/>
+                                <!-- Ruote -->
+                                <circle cx="10.3" cy="17.4" r="1.2" fill="#FFFFFF"/>
+                                <circle cx="16.1" cy="17.4" r="1.2" fill="#FFFFFF"/>
+                            </svg>
+                            <p class="flex-1 text-sm text-slate-700 leading-snug">
+                                Il libro è acquistabile nei seguenti store on line
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Riga 3 con lista di link predefiniti pronti da compilare -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4 min-h-[3.25rem]">
+                        <ul class="flex flex-col gap-2 text-sm">
+                            <li>
+                                <a href="https://www.amazon.it/s?i=stripbooks&rh=p_27%3ALara%2BVignozzi&ref=dp_byline_sr_book_1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>Amazon</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.mondadoristore.it/gioiabella-e-albertino-avventure-in-una-fattoria-toscana-libro-lara-vignozzi/p/9791282288644" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>Mondadori Store</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.lafeltrinelli.it/gioiabella-albertino-avventure-in-fattoria-libro-lara-vignozzi/e/9791282288644" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>La Feltrinelli</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.ibs.it/libri/autori/lara-vignozzi?hl=it-IT" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>IBS</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.planetbookeditrice.it/?product=gioiabella-e-albertino" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>PlanetBook Editore</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.unilibro.it/libro/vignozzi-lara/gioiabella-albertino-avventure-fattoria-toscana/9791282288644" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>Unilibro</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.libreriauniversitaria.it/gioiabella-albertino-avventure-fattoria-toscana/libro/9791282288644" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium border border-slate-200/80 transition-colors">
+                                    <span>LibreriaUniversitaria.it</span>
+                                    <span class="text-slate-400" aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <!-- Riga 4 vuota -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4 min-h-[3.25rem]"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Nota a piè di pagina discreta -->
+        <footer class="mt-3 text-center">
+            <p class="text-xs text-slate-400"></p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
