@@ -26,13 +26,13 @@
         }
     </script>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 antialiased selection:bg-indigo-100 selection:text-indigo-700">
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 antialiased selection:bg-indigo-100 selection:text-indigo-700">
 
     <!-- Contenitore principale ottimizzato per mobile (max-width 480px centrato, a tutta larghezza su schermi piccoli) -->
     <main class="w-full max-w-[480px] mx-auto">
         
-        <!-- Banner illustrato in cima con fallback SVG integrato (volpe e maialino in campagna) -->
-        <div class="mb-5 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-sky-300">
+        <!-- Banner illustrato in cima con spazio ridotto (mb-3) e fallback SVG integrato -->
+        <div class="mb-3 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-sky-300">
             <img src="Barra del titolo.jpg" alt="Gioiabella e Albertino in campagna" class="w-full h-auto block object-cover" onerror="this.style.display='none'; document.getElementById('banner-fallback').style.display='block';">
             <svg id="banner-fallback" style="display:none;" class="w-full h-auto block" viewBox="0 0 800 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrazione di Gioiabella la volpe e Albertino il maialino in campagna">
                 <!-- Cielo azzurro -->
@@ -76,6 +76,31 @@
                     <rect x="0" y="302" width="800" height="14"/>
                     <rect x="65" y="242" width="22" height="95" rx="3"/>
                     <rect x="710" y="242" width="22" height="95" rx="3"/>
+                </g>
+                <!-- Fiori bianchi e rosa sul prato -->
+                <g transform="translate(135, 345)">
+                    <line x1="0" y1="0" x2="0" y2="28" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(85, 375)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5.5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5.5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5.5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5.5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5.5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(650, 355)">
+                    <line x1="0" y1="0" x2="0" y2="30" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5.5" fill="#FF80AB"/><circle cx="7" cy="-4" r="5.5" fill="#FF80AB"/>
+                    <circle cx="-5" cy="6" r="5.5" fill="#FF80AB"/><circle cx="5" cy="6" r="5.5" fill="#FF80AB"/>
+                    <circle cx="0" cy="-9" r="5.5" fill="#FF80AB"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
+                </g>
+                <g transform="translate(715, 380)">
+                    <line x1="0" y1="0" x2="0" y2="28" stroke="#3D7A28" stroke-width="3"/>
+                    <circle cx="-7" cy="-4" r="5" fill="#FFFFFF"/><circle cx="7" cy="-4" r="5" fill="#FFFFFF"/>
+                    <circle cx="-5" cy="6" r="5" fill="#FFFFFF"/><circle cx="5" cy="6" r="5" fill="#FFFFFF"/>
+                    <circle cx="0" cy="-9" r="5" fill="#FFFFFF"/><circle cx="0" cy="0" r="4.5" fill="#FFD600"/>
                 </g>
                 <!-- Gioiabella (Volpe) -->
                 <g transform="translate(275, 265)">
@@ -135,147 +160,143 @@
             </svg>
         </div>
 
-        <!-- Intestazione della sezione -->
-        <header class="mb-5 px-1">
+        <!-- Intestazione della sezione con spaziatura compatta -->
+        <header class="mb-3 px-1">
             <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                 Gioiabella e Albertino
             </h1>
-            <p class="text-sm text-slate-500 mt-1">
+            <p class="text-sm text-slate-500 mt-0.5">
                 Segui le nostre avventure sui canali social:
             </p>
         </header>
 
-        <!-- Card contenitore della tabella con bordi arrotondati e ombreggiatura leggera -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+        <!-- Tabella HTML semantica: 1 colonna e 4 righe con spaziatura verticale ridotta -->
+        <table class="w-full bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden border-collapse text-left">
             
-            <!-- Tabella HTML semantica: 1 colonna e 4 righe -->
-            <table class="w-full border-collapse text-left">
+            <!-- Intestazione nascosta visivamente ma utile per gli screen reader (accessibilità) -->
+            <thead class="sr-only">
+                <tr>
+                    <th scope="col">Contenuto della riga</th>
+                </tr>
+            </thead>
+            
+            <!-- Corpo della tabella con divisori sottili tra le righe -->
+            <tbody class="divide-y divide-slate-200">
                 
-                <!-- Intestazione nascosta visivamente ma utile per gli screen reader (accessibilità) -->
-                <thead class="sr-only">
-                    <tr>
-                        <th scope="col">Contenuto della riga</th>
-                    </tr>
-                </thead>
-                
-                <!-- Corpo della tabella con divisori sottili tra le righe -->
-                <tbody class="divide-y divide-slate-100">
-                    
-                    <!-- Riga 1 -->
-                    <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
-                        <td class="p-5 sm:p-6">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <div class="flex items-center gap-3">
-                                        <!-- Icona Facebook ingrandita (40x40px) -->
-                                        <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="12" fill="#1877F2"/>
-                                            <path d="M16.671 15.469L17.203 12H13.875V9.75C13.875 8.801 14.34 7.875 15.83 7.875H17.344V4.922C17.344 4.922 15.97 4.688 14.657 4.688C11.914 4.688 10.125 6.35 10.125 9.356V12H7.078V15.469H10.125V23.854C10.736 23.95 11.362 24 12 24C12.638 24 13.264 23.95 13.875 23.854V15.469H16.671Z" fill="white"/>
-                                        </svg>
-                                        <h2 class="text-lg font-semibold text-slate-900">
-                                            <a href="https://www.facebook.com/share/19rUMGFXws/" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold no-underline hover:opacity-80 transition-opacity">
-                                                Facebook
-                                            </a>
-                                        </h2>
-                                    </div>
-                                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-Rimani aggiornato sugli ultimi post, reel e novita! Unisciti alla nostra community su Facebook clicando "Segui" sulla pagina per non perderti nulla.
-                                    </p>
+                <!-- Riga 1 -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <!-- Icona Facebook ufficiale (40x40px) -->
+                                    <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+                                        <path d="M16.671 15.469L17.203 12H13.875V9.75C13.875 8.801 14.34 7.875 15.83 7.875H17.344V4.922C17.344 4.922 15.97 4.688 14.657 4.688C11.914 4.688 10.125 6.35 10.125 9.356V12H7.078V15.469H10.125V23.854C10.736 23.95 11.362 24 12 24C12.638 24 13.264 23.95 13.875 23.854V15.469H16.671Z" fill="white"/>
+                                    </svg>
+                                    <h2 class="text-lg font-bold text-slate-900 leading-tight">
+                                        <a href="https://www.facebook.com/share/19rUMGFXws/" target="_blank" rel="noopener noreferrer" class="text-slate-900 no-underline font-bold hover:opacity-80 transition-opacity">
+                                            Facebook
+                                        </a>
+                                    </h2>
                                 </div>
+                                <p class="text-sm text-slate-600 mt-1 leading-snug">
+                                    Rimani aggiornato sugli ultimi post, reel e novità! Unisciti alla nostra community su Facebook cliccando "Segui" sulla pagina per non perderti nulla.
+                                </p>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                    <!-- Riga 2 -->
-                    <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
-                        <td class="p-5 sm:p-6">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <div class="flex items-center gap-3">
-                                        <!-- Icona WhatsApp ufficiale (40x40px) -->
-                                        <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="12" fill="#25D366"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.003 5.25C8.279 5.25 5.25 8.278 5.25 12.002C5.25 13.192 5.561 14.354 6.151 15.378L5.192 18.88L8.775 17.94C9.761 18.478 10.872 18.761 12.003 18.761H12.006C15.729 18.761 18.758 15.733 18.758 12.009C18.758 10.204 18.055 8.507 16.779 7.231C15.503 5.955 13.807 5.25 12.003 5.25ZM15.946 14.906C15.778 15.379 14.969 15.811 14.585 15.868C14.238 15.92 13.798 15.942 13.316 15.789C13.023 15.696 12.648 15.572 12.167 15.365C10.145 14.492 8.825 12.456 8.724 12.321C8.623 12.186 7.902 11.229 7.902 10.238C7.902 9.247 8.421 8.76 8.606 8.558C8.791 8.356 9.01 8.305 9.145 8.305C9.28 8.305 9.415 8.307 9.533 8.313C9.657 8.319 9.824 8.266 9.988 8.66C10.156 9.065 10.56 10.056 10.611 10.157C10.661 10.258 10.695 10.376 10.628 10.511C10.56 10.646 10.527 10.73 10.426 10.848C10.325 10.966 10.214 11.112 10.123 11.202C10.022 11.303 9.917 11.412 10.035 11.615C10.153 11.817 10.559 12.479 11.16 13.015C11.933 13.704 12.585 13.918 12.787 14.019C12.989 14.12 13.107 14.103 13.225 13.968C13.343 13.833 13.73 13.378 13.865 13.176C14 12.974 14.134 13.008 14.319 13.075C14.504 13.142 15.498 13.631 15.7 13.732C15.902 13.833 16.037 13.884 16.087 13.968C16.138 14.052 16.138 14.433 15.946 14.906Z" fill="white"/>
-                                        </svg>
-                                        <h2 class="text-lg font-semibold text-slate-900">
-                                            <a href="https://whatsapp.com/channel/0029Vb9SmlTCnA7qhUsxYN2T" target="_blank" rel="noopener noreferrer" class="text-slate-900 font-semibold no-underline hover:opacity-80 transition-opacity">
-                                                Whatsapp
-                                            </a>
-                                        </h2>
-                                    </div>
-                                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-C'è anche un Canale WhatsApp ufficiale. Niente chat di gruppo o messaggi inutili: solo gli aggiornamenti più importanti e qualche anteprima esclusiva. Il tuo numero resta sempre privato!
-                                    </p>
+                <!-- Riga 2 -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <!-- Icona WhatsApp ufficiale (40x40px) -->
+                                    <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="12" fill="#25D366"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.003 5.25C8.279 5.25 5.25 8.278 5.25 12.002C5.25 13.192 5.561 14.354 6.151 15.378L5.192 18.88L8.775 17.94C9.761 18.478 10.872 18.761 12.003 18.761H12.006C15.729 18.761 18.758 15.733 18.758 12.009C18.758 10.204 18.055 8.507 16.779 7.231C15.503 5.955 13.807 5.25 12.003 5.25ZM15.946 14.906C15.778 15.379 14.969 15.811 14.585 15.868C14.238 15.92 13.798 15.942 13.316 15.789C13.023 15.696 12.648 15.572 12.167 15.365C10.145 14.492 8.825 12.456 8.724 12.321C8.623 12.186 7.902 11.229 7.902 10.238C7.902 9.247 8.421 8.76 8.606 8.558C8.791 8.356 9.01 8.305 9.145 8.305C9.28 8.305 9.415 8.307 9.533 8.313C9.657 8.319 9.824 8.266 9.988 8.66C10.156 9.065 10.56 10.056 10.611 10.157C10.661 10.258 10.695 10.376 10.628 10.511C10.56 10.646 10.527 10.73 10.426 10.848C10.325 10.966 10.214 11.112 10.123 11.202C10.022 11.303 9.917 11.412 10.035 11.615C10.153 11.817 10.559 12.479 11.16 13.015C11.933 13.704 12.585 13.918 12.787 14.019C12.989 14.12 13.107 14.103 13.225 13.968C13.343 13.833 13.73 13.378 13.865 13.176C14 12.974 14.134 13.008 14.319 13.075C14.504 13.142 15.498 13.631 15.7 13.732C15.902 13.833 16.037 13.884 16.087 13.968C16.138 14.052 16.138 14.433 15.946 14.906Z" fill="white"/>
+                                    </svg>
+                                    <h2 class="text-lg font-bold text-slate-900 leading-tight">
+                                        <a href="https://whatsapp.com/channel/0029Vb9SmlTCnA7qhUsxYN2T" target="_blank" rel="noopener noreferrer" class="text-slate-900 no-underline font-bold hover:opacity-80 transition-opacity">
+                                            Whatsapp
+                                        </a>
+                                    </h2>
                                 </div>
+                                <p class="text-sm text-slate-600 mt-1 leading-snug">
+                                    C'è anche un Canale WhatsApp ufficiale. Niente chat di gruppo o messaggi inutili: solo gli aggiornamenti più importanti e qualche anteprima esclusiva. Il tuo numero resta sempre privato!
+                                </p>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                    <!-- Riga 3 -->
-                    <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
-                        <td class="p-5 sm:p-6">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <div class="flex items-center gap-3">
-                                        <!-- Icona Instagram ufficiale (40x40px) -->
-                                        <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <defs>
-                                                <radialGradient id="instagram-gradient" cx="0.25" cy="1" r="1.2">
-                                                    <stop offset="0%" stop-color="#FFD600"/>
-                                                    <stop offset="25%" stop-color="#FF7A00"/>
-                                                    <stop offset="50%" stop-color="#FF0069"/>
-                                                    <stop offset="75%" stop-color="#D300C5"/>
-                                                    <stop offset="100%" stop-color="#7638FA"/>
-                                                </radialGradient>
-                                            </defs>
-                                            <rect width="24" height="24" rx="6" fill="url(#instagram-gradient)"/>
-                                            <rect x="4.5" y="4.5" width="15" height="15" rx="4.2" stroke="white" stroke-width="1.8"/>
-                                            <circle cx="12" cy="12" r="3.6" stroke="white" stroke-width="1.8"/>
-                                            <circle cx="16.6" cy="7.4" r="1.1" fill="white"/>
-                                        </svg>
-                                        <h2 class="text-lg font-semibold text-slate-900">
-                                            Instagram
-                                        </h2>
-                                    </div>
-                                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                                       In arrivo
-                                    </p>
+                <!-- Riga 3 -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <!-- Icona Instagram ufficiale (40x40px) -->
+                                    <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <radialGradient id="instagram-gradient" cx="0.25" cy="1" r="1.2">
+                                                <stop offset="0%" stop-color="#FFD600"/>
+                                                <stop offset="25%" stop-color="#FF7A00"/>
+                                                <stop offset="50%" stop-color="#FF0069"/>
+                                                <stop offset="75%" stop-color="#D300C5"/>
+                                                <stop offset="100%" stop-color="#7638FA"/>
+                                            </radialGradient>
+                                        </defs>
+                                        <rect width="24" height="24" rx="6" fill="url(#instagram-gradient)"/>
+                                        <rect x="4.5" y="4.5" width="15" height="15" rx="4.2" stroke="white" stroke-width="1.8"/>
+                                        <circle cx="12" cy="12" r="3.6" stroke="white" stroke-width="1.8"/>
+                                        <circle cx="16.6" cy="7.4" r="1.1" fill="white"/>
+                                    </svg>
+                                    <h2 class="text-lg font-bold text-slate-900 leading-tight">
+                                        Instagram
+                                    </h2>
                                 </div>
+                                <p class="text-sm text-slate-600 mt-1 leading-snug">
+                                    In arrivo
+                                </p>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                    <!-- Riga 4 -->
-                    <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
-                        <td class="p-5 sm:p-6">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <div class="flex items-center gap-3">
-                                        <!-- Icona Carrello della spesa classico ed elegante (40x40px) -->
-                                        <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <circle cx="12" cy="12" r="12" fill="#0D9488"/>
-                                            <path d="M5.25 6.75H7.15C7.55 6.75 7.9 7.02 7.99 7.41L8.35 9M8.35 9H18.15C18.72 9 19.12 9.55 18.96 10.1L17.68 14.35C17.57 14.72 17.23 14.98 16.84 14.98H9.88C9.48 14.98 9.13 14.71 9.04 14.32L8.35 9Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="10.25" cy="17.75" r="1.25" fill="white"/>
-                                            <circle cx="16.25" cy="17.75" r="1.25" fill="white"/>
-                                        </svg>
-                                        <h2 class="text-lg font-semibold text-slate-900">
-                                            Dove acquistare il libro
-                                        </h2>
-                                    </div>
-                                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                                        Scopri tutte le librerie fisiche e gli store online ufficiali dove ordinare e ricevere comodamente a casa tua il libro illustrato di Gioiabella e Albertino.
-                                    </p>
+                <!-- Riga 4 -->
+                <tr class="transition-colors duration-150 hover:bg-slate-50/90 active:bg-slate-100">
+                    <td class="py-3 px-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <!-- Icona Carrello della spesa classico ed elegante (40x40px) -->
+                                    <svg class="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="12" fill="#0D9488"/>
+                                        <path d="M5.25 6.75H7.15C7.55 6.75 7.9 7.02 7.99 7.41L8.35 9M8.35 9H18.15C18.72 9 19.12 9.55 18.96 10.1L17.68 14.35C17.57 14.72 17.23 14.98 16.84 14.98H9.88C9.48 14.98 9.13 14.71 9.04 14.32L8.35 9Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="10.25" cy="17.75" r="1.25" fill="white"/>
+                                        <circle cx="16.25" cy="17.75" r="1.25" fill="white"/>
+                                    </svg>
+                                    <h2 class="text-lg font-bold text-slate-900 leading-tight">
+                                        Dove acquistare il libro
+                                    </h2>
                                 </div>
+                                <p class="text-sm text-slate-600 mt-1 leading-snug">
+                                    Scopri tutte le librerie fisiche e gli store online ufficiali dove ordinare e ricevere comodamente a casa tua il libro illustrato di Gioiabella e Albertino.
+                                </p>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
 
         <!-- Nota a piè di pagina discreta -->
-        <footer class="mt-4 text-center">
+        <footer class="mt-3 text-center">
 
         </footer>
 
